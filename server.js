@@ -68,13 +68,13 @@ const express = require('express');
 const app = express();
 const db = require('./db'); 
 const bodyParser = require('body-parser');
-
+require('dotenv').config();
 app.use(bodyParser.json());
 
 // Import models
 const MenuItem = require('./models/MenuItem'); 
 const Person = require('./models/Person');  // ✅ Fixed: Import Person model
-
+const PORT = process.removeListener.PORT||3000;
 // Default route
 app.get('/', (req, res) => {
     res.send('Hello sir, welcome to my hotel.');
