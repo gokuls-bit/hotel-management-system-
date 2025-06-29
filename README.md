@@ -1,6 +1,6 @@
 # 🏨 Hotel Management App
  
-A full-featured Hotel Management System built with **Node.js**, **Express**, and **MongoDB**, designed to streamline bookings, guest records, room management, and payments.
+A full-featured Hotel Management System built with **Node.js**,  **Express**, and **MongoDB**, designed to streamline bookings, guest records, room management, and payments.
 
 -- -
 
