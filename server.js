@@ -91,3 +91,51 @@ app.use('/menuitem', MenuItemRoutes);
 app.listen(3000, () => {
     console.log('Listening on port 3000');
 });
+// Import dependencies
+const express = require('express');
+const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
+const db = require('./db'); // Database connection
+const cors = require('cors');
+
+// Load environment variables
+dotenv.config();
+
+// Initialize Express app
+const app = express();
+
+// Middlewares
+app.use(cors()); // Enable Cross-Origin Resource Sharing
+app.use(bodyParser.json());
+
+// Import models
+const MenuItem = require('./models/MenuItem');
+const Person = require('./models/Person');
+
+// Import routes
+const menuItemRoutes = require('./routes/MenuItemRoutes');
+const personRoutes = require('./routes/PersonRoutes');
+
+// Default route
+app.get('/', (req, res) => {
+    res.send('👨‍🍳 Welcome to Gokul’s Hotel API! 🍽️');
+});
+
+// Route middleware
+app.use('/person', personRoutes);
+app.use('/menuitem', menuItemRoutes);
+
+// Global error handler (optional, good for debugging)
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+});
+
+// Use port from environment or default to 3000
+const PORT = process.env.PORT || 3000;
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`🚀 Server running at http://localhost:${PORT}`);
+});
+
