@@ -7,7 +7,7 @@
 //var add =(a,b) => {return a+b;}
 //var add = (a,b)=> a+b;
 //var result = add(2,7);
-//console.log(result);
+//console.log(result); 
 //(function(a,b){
 //console.log('gokul is sant ');
 //})();
