@@ -6,7 +6,7 @@ const mongoURL = 'mongodb+srv://gokulsant684:santg@cluster0.vc010.mongodb.net/my
 
 console.log("🚀 Nodemon is running...");
 
-// Connect to MongoDB (No deprecated options)
+// Connect to MongoDB (No deprecated  options)
 mongoose.connect(mongoURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
